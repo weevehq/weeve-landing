@@ -72,7 +72,7 @@ export default function FinalCTA() {
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Join thousands of people who've transformed how they save, organize, and act on everything they care about online.
+            Join thousands of people who&apos;ve transformed how they save, organize, and act on everything they care about online.
           </p>
 
           {/* Email Form */}
