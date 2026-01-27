@@ -17,10 +17,10 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 const footerLinks = {
-  Product: ["Features", "Pricing", "Security", "Changelog", "Roadmap"],
-  Company: ["About", "Blog", "Careers", "Press Kit", "Contact"],
-  Resources: ["Documentation", "Help Center", "Community", "API", "Status"],
-  Legal: ["Privacy", "Terms", "Cookie Policy", "Licenses", "GDPR"],
+  Product: ["Features", "How It Works", "Demo"],
+  Company: ["About", "Contact"],
+  Resources: ["Help Center"],
+  Legal: ["Privacy", "Terms"],
 };
 
 const socialLinks = [
