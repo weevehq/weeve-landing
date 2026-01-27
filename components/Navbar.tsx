@@ -31,7 +31,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center">
             <Image
-              src="/images/Large Weeve Cropped.png"
+              src="/images/Weeve_New_Logo_Correct_Orange.png"
               alt="Weeve"
               width={400}
               height={150}

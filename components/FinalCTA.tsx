@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function FinalCTA() {
@@ -106,26 +106,6 @@ export default function FinalCTA() {
               </Link>
             </div>
           </motion.form>
-
-          {/* Features List */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 text-sm sm:text-base text-white/90"
-          >
-            {["Free to start", "No credit card required", "Cancel anytime"].map(
-              (feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-center sm:justify-start space-x-2"
-                >
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </div>
-              )
-            )}
-          </motion.div>
 
           {/* Platforms */}
           <motion.div

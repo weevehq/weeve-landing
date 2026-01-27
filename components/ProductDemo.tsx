@@ -329,7 +329,7 @@ function ExtensionDemo() {
           <div className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Image
-                src="/images/Large Weeve Cropped.png"
+                src="/images/Weeve_New_Logo_Correct_Orange.png"
                 alt="Weeve"
                 width={400}
                 height={150}
@@ -545,6 +545,8 @@ function ExtensionDemo() {
 }
 
 function ExtensionPopupDemo() {
+  const [showPopup, setShowPopup] = useState(true);
+
   return (
     <div className="relative">
       {/* Browser Window showing Recipe Website */}
@@ -566,8 +568,17 @@ function ExtensionPopupDemo() {
           </div>
           {/* Extension Icon in Toolbar */}
           <div className="absolute right-4 top-3 z-50">
-            <div className="w-6 h-6 bg-primary rounded flex items-center justify-center cursor-pointer">
-              <span className="text-white text-xs font-bold">W</span>
+            <div
+              className="w-6 h-6 bg-primary rounded flex items-center justify-center cursor-pointer overflow-hidden p-1 hover:bg-primary/90 transition-colors"
+              onClick={() => setShowPopup(!showPopup)}
+            >
+              <Image
+                src="/images/W_Icon_White.png"
+                alt="Weeve Extension"
+                width={16}
+                height={16}
+                className="w-3.5 h-3.5 object-contain"
+              />
             </div>
           </div>
         </div>
@@ -618,13 +629,16 @@ function ExtensionPopupDemo() {
       </motion.div>
 
       {/* Extension Popup - Positioned relative to outer container, connected to icon */}
-      <motion.div
-        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-        className="absolute top-9 right-4 z-50 w-80"
-        style={{ height: "fit-content", position: "absolute" }}
-      >
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute top-9 right-4 z-50 w-80"
+            style={{ height: "fit-content", position: "absolute" }}
+          >
         {/* Connector Triangle - points up to extension icon (aligned with icon center) */}
         <div
           className="absolute -top-1.5 w-3 h-3 bg-white border-l border-t border-gray-200 transform rotate-45 z-10"
@@ -636,11 +650,11 @@ function ExtensionPopupDemo() {
           {/* Orange Top Bar */}
           <div className="bg-primary px-4 py-3 flex items-center justify-between">
             <Image
-              src="/images/Large Weeve Cropped.png"
+              src="/images/Weeve_New_Logo_Correct_Orange.png"
               alt="Weeve"
               width={400}
               height={150}
-              className="h-6 w-auto brightness-0 invert"
+              className="h-8 w-auto brightness-0 invert"
             />
             <button className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded text-xs font-medium flex items-center space-x-1 transition-colors">
               <span>Open Dashboard</span>
@@ -716,7 +730,9 @@ function ExtensionPopupDemo() {
             </motion.button>
           </div>
         </div>
-      </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -895,7 +911,7 @@ function MobileDemo() {
                   <div className="flex items-center space-x-4">
                     <div className="text-xl">☰</div>
                     <Image
-                      src="/images/Large Weeve Cropped.png"
+                      src="/images/Weeve_New_Logo_Correct_Orange.png"
                       alt="Weeve"
                       width={400}
                       height={150}

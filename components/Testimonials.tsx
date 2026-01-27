@@ -7,23 +7,23 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "Product Designer",
+    name: "Sarah C.",
+    role: "Fashion Lover",
     avatar: "SC",
     content:
-      "Weeve has completely changed how I research and save design inspiration. The AI extraction is magical—it pulls exactly what I need.",
+      "I used to lose track of all the outfits and style inspiration I found online. Weeve keeps everything organized so I can easily find that perfect look when I need it.",
     rating: 5,
   },
   {
-    name: "Marcus Johnson",
-    role: "Home Buyer",
+    name: "Marcus J.",
+    role: "Apartment Shopper",
     avatar: "MJ",
     content:
       "I was juggling dozens of real estate listings across different sites. Weeve organized everything beautifully and made comparing properties so easy.",
     rating: 5,
   },
   {
-    name: "Emily Rodriguez",
+    name: "Emily R.",
     role: "Recipe Collector",
     avatar: "ER",
     content:
@@ -31,24 +31,24 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "David Park",
-    role: "Researcher",
-    avatar: "DP",
+    name: "Jen S.",
+    role: "Social Influencer",
+    avatar: "JS",
     content:
-      "As someone who reads hundreds of articles, Weeve has become my second brain. The personalized feed resurfaces content at the perfect time.",
+      "Weeve makes it so easy to save and organize all the products I discover. I can quickly build collections and share my favorite finds with my audience.",
     rating: 5,
   },
   {
-    name: "Lisa Thompson",
-    role: "Travel Planner",
+    name: "Lisa T.",
+    role: "Travel Enthusiast",
     avatar: "LT",
     content:
       "Planning trips with friends has never been easier. We can all save places, compare options, and make decisions together in Weeve.",
     rating: 5,
   },
   {
-    name: "Alex Kumar",
-    role: "Tech Enthusiast",
+    name: "Alex K.",
+    role: "Avid Shopper",
     avatar: "AK",
     content:
       "The cross-platform sync is seamless. I save on my phone during commute and organize on my desktop at home. Everything just works.",
@@ -128,7 +128,7 @@ export default function Testimonials() {
             <span className="text-primary">save everything</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Join thousands of users who have transformed how they organize their digital lives
+            Join Weeve users who have transformed how they organize their digital lives
           </p>
         </motion.div>
 
@@ -138,28 +138,6 @@ export default function Testimonials() {
             <TestimonialCard key={index} testimonial={testimonial} index={index} />
           ))}
         </div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20"
-        >
-          {[
-            { value: "100K+", label: "Active Users" },
-            { value: "5M+", label: "Items Saved" },
-            { value: "50K+", label: "Lists Created" },
-            { value: "4.9", label: "App Rating" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
