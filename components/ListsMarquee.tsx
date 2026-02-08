@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 type ListCard = {
   title: string;
   items: number;
@@ -329,11 +331,13 @@ function ListCardItem({ title, items, folder, images }: ListCard) {
       <div className="grid grid-cols-2 gap-[3px] p-[3px] h-full bg-white">
         {images.map((img, i) => (
           <div key={i} className="rounded-xl overflow-hidden bg-gray-100">
-            <img
+            <Image
               src={getImagePath(folder, img)}
               alt=""
+              width={105}
+              height={105}
               className="w-full h-full object-cover"
-              loading="lazy"
+              sizes="105px"
             />
           </div>
         ))}

@@ -363,14 +363,18 @@ function ExtensionDemo() {
               >
                 <div className="relative">
                   <div className="grid grid-cols-2 gap-1 p-1">
-                    <img
+                    <Image
                       src="/images/winter%20jackets/vuori%20jacket.webp"
                       alt="Vuori Jacket"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
-                    <img
+                    <Image
                       src="/images/winter%20jackets/Womens-Aconcagua-3-Hoodie.avif"
                       alt="Women's Aconcagua 3 Hoodie"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
                   </div>
@@ -464,14 +468,18 @@ function ExtensionDemo() {
               >
                 <div className="relative">
                   <div className="grid grid-cols-2 gap-1 p-1">
-                    <img
+                    <Image
                       src="/images/womens%20running%20shoes/brookswomens.avif"
                       alt="Brooks Women's Running Shoes"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
-                    <img
+                    <Image
                       src="/images/womens%20running%20shoes/womens%20on.avif"
                       alt="Women's Running Shoes"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
                   </div>
@@ -494,14 +502,18 @@ function ExtensionDemo() {
               >
                 <div className="relative">
                   <div className="grid grid-cols-2 gap-1 p-1">
-                    <img
+                    <Image
                       src="/images/new%20jeans/womens%20jeans%202.webp"
                       alt="Women's Jeans"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
-                    <img
+                    <Image
                       src="/images/new%20jeans/womensjeans1.webp"
                       alt="Women's Jeans"
+                      width={200}
+                      height={96}
                       className="h-24 w-full object-cover rounded"
                     />
                   </div>
@@ -606,10 +618,11 @@ function ExtensionPopupDemo() {
                   • Featured Recipe
                 </div>
                 {/* Recipe image */}
-                <img
+                <Image
                   src="/images/chrome%20extension/carbonara.jpg"
                   alt="Classic Spaghetti Carbonara"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="space-y-2">
@@ -711,9 +724,9 @@ function ExtensionPopupDemo() {
               ].map((image, i) => (
                 <div
                   key={i}
-                  className="aspect-square bg-gray-100 rounded border border-gray-200 overflow-hidden"
+                  className="relative aspect-square bg-gray-100 rounded border border-gray-200 overflow-hidden"
                 >
-                  <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                  <Image src={image.src} alt={image.alt} fill className="object-cover" />
                 </div>
               ))}
             </div>
@@ -866,9 +879,11 @@ function MobileDemo() {
                         {/* Image Section */}
                         <div className="mb-2">
                           <div className="w-full rounded-lg bg-gray-100 flex items-center justify-center py-2">
-                            <img
+                            <Image
                               src="/images/shoes/Hoka%20Clifton%209.webp"
                               alt="Hoka Clifton 9"
+                              width={100}
+                              height={65}
                               className="max-h-[65px] w-auto object-contain"
                             />
                           </div>
@@ -952,19 +967,25 @@ function MobileDemo() {
                     >
                       <div className="relative">
                         <div className="grid grid-cols-2 gap-0.5 p-0.5">
-                          <img
+                          <Image
                             src="/images/shoes/adidas%20Supernova%2B.webp"
                             alt="Adidas Supernova+"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/shoes/Brooks%20Adrenaline%20GTS%2022%20orange.webp"
                             alt="Brooks Adrenaline GTS 22"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/shoes/HOKA%20Clifton%208.webp"
                             alt="HOKA Clifton 8"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
                           {/* 4th Shoe with Animation */}
@@ -1010,7 +1031,7 @@ function MobileDemo() {
                             {!showFourthShoe ? (
                               <div className="w-full h-full bg-gray-200 rounded-lg" />
                             ) : (
-                              <motion.img
+                              <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{
@@ -1018,10 +1039,15 @@ function MobileDemo() {
                                   duration: 0.4,
                                   ease: "easeOut",
                                 }}
-                                src="/images/shoes/Hoka%20Clifton%209.webp"
-                                alt="Hoka Clifton 9"
-                                className="h-16 w-full object-contain rounded-lg bg-gray-100"
-                              />
+                              >
+                                <Image
+                                  src="/images/shoes/Hoka%20Clifton%209.webp"
+                                  alt="Hoka Clifton 9"
+                                  width={100}
+                                  height={64}
+                                  className="h-16 w-full object-contain rounded-lg bg-gray-100"
+                                />
+                              </motion.div>
                             )}
                           </div>
                         </div>
@@ -1088,24 +1114,32 @@ function MobileDemo() {
                     >
                       <div className="relative">
                         <div className="grid grid-cols-2 gap-0.5 p-0.5">
-                          <img
+                          <Image
                             src="/images/headphones/81258af8-38fa-4d9e-a4c5-8e25ea454d7b.webp"
                             alt="Wireless Earbuds"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/headphones/airpods-pro-3-hero-select-202509.jpeg"
                             alt="AirPods Pro"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/headphones/de2d6c30-fad7-458c-b40f-9b1980571c4f.webp"
                             alt="Over-ear Headphones"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/headphones/GUEST_87d70695-9ae4-4fd2-9cfa-10666f7ab012.avif"
                             alt="Over-ear Headphones"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
                         </div>
@@ -1163,24 +1197,32 @@ function MobileDemo() {
                     >
                       <div className="relative">
                         <div className="grid grid-cols-2 gap-0.5 p-0.5">
-                          <img
+                          <Image
                             src="/images/fantasy%20books/a%20wise%20mans%20fear.jpg"
                             alt="A Wise Man's Fear"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/fantasy%20books/fellowship.webp"
                             alt="Fellowship"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/fantasy%20books/name%20of%20the%20wind.jpg"
                             alt="Name of the Wind"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/fantasy%20books/the%20two%20towers.jpg"
                             alt="The Two Towers"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
                         </div>
@@ -1203,24 +1245,32 @@ function MobileDemo() {
                     >
                       <div className="relative">
                         <div className="grid grid-cols-2 gap-0.5 p-0.5">
-                          <img
+                          <Image
                             src="/images/entrepreneurship%20books/good%20to%20great.jpeg"
                             alt="Good to Great"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/entrepreneurship%20books/how%20i%20built%20this.webp"
                             alt="How I Built This"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/entrepreneurship%20books/lean%20startup.webp"
                             alt="Lean Startup"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
-                          <img
+                          <Image
                             src="/images/entrepreneurship%20books/zero%20to%20one.webp"
                             alt="Zero to One"
+                            width={100}
+                            height={64}
                             className="h-16 w-full object-contain rounded-lg bg-gray-100"
                           />
                         </div>
