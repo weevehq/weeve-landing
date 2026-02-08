@@ -33,6 +33,7 @@ const config: Config = {
         "slide-down": "slideDown 0.6s ease-out",
         "scale-in": "scaleIn 0.5s ease-out",
         float: "float 3s ease-in-out infinite",
+        "marquee-right": "marqueeRight 120s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -54,6 +55,10 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
+        },
+        marqueeRight: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
         },
       },
     },

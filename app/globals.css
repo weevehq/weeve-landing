@@ -47,3 +47,9 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-play-state: paused;
+  }
+}

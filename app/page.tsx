@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ListsMarquee from "@/components/ListsMarquee";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import ProductDemo from "@/components/ProductDemo";
@@ -21,6 +22,7 @@ export default function Home() {
     <main className="min-h-screen relative w-full overflow-x-hidden">
       <Navbar />
       <Hero />
+      <ListsMarquee />
       <Features />
       <HowItWorks />
       <ProductDemo />
